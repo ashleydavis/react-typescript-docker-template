@@ -6,59 +6,39 @@ An example of using React with TypeScript, bundled using Docker / Docker-Compose
 
 [With some input from my Node.js microservices example](https://github.com/ashleydavis/nodejs-microservices-example).
 
-## Setup
+## Running with Docker-Compose in the Vagrant dev VM
 
-Clone repo, open command line, change to repo directory.
+Ensure you have VirtualBox and Vagrant installed.
 
-Install dependencies for server:
+Bring the VM up:
 
-    cd server
-    npm install
+    vagrant up
 
-Then install dependencies for the client:
+This starts an Ubuntu development VM, installs Docker and Docker-Compose.
 
-    cd client
-    npm install
+After the dev VM has started, you can shell in and boot the system using Docker-Compose:
 
-## Build
+    vagrant ssh
 
-Build the server app:
+Change to the shared directory:
 
-    cd server
-    npm run build
+    cd /vagrant
 
-Build the web app:
+Run Docker Compose:
 
-    cd client
-    npm run build
+    sudo docker-compose up --build
 
-To compile just with TypeScript (either client or server)
+You can also add a -d parameter to start Docker-Compose in dettached mode.
 
-    npx tsc
+Connect to the webpack dev server: http://localhost:4010
 
-## Run the server (for test/prod)
+Connect to the prod web server and API: http://localhost:4000
 
-    npm start
+To list running containers:
 
-## Run the server (for development)
+    sudo docker-compose ps
 
-    npm run start:dev
+To kill the containers:
 
-## Run the client (for development)
+    sudo docker-compose kill
 
-    cd client 
-    npm start
-
-## Testing
-
-Run the dev server:
-
-    npm run start:dev
-
-Run cypress:
-
-    npm test
-
-Open cypress GUI:
-
-    npm run cypress
