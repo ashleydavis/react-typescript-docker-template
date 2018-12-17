@@ -49,12 +49,6 @@ To compile just with TypeScript (either client or server)
     cd client 
     npm start
 
-## Deploy to Azure
-
-This repo contains a web.config and can be deploy easily to an Azure web app.
-
-In the application settings for the web app make sure you set WEBSITE_NODE_DEFAULT_VERSION to 8.11.1.
-
 ## Testing
 
 Run the dev server:

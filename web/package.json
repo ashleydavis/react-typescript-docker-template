@@ -1,0 +1,40 @@
+{
+  "name": "react-typescript-docker-template",
+  "version": "1.0.0",
+  "description": "An example of using React with TypeScript, bundled using Docker / Docker-Compose.",
+  "main": "./build/index.js",
+  "scripts": {
+    "start": "node ./build/index.js",
+    "start:dev": "nodemon --legacy-watch",
+    "build": "tsc",
+    "test": "cypress run",
+    "cypress": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashleydavis/react-typescript-docker-template.git"
+  },
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "author": "ashley@codecapers.com.au",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ashleydavis/react-typescript-docker-template/issues"
+  },
+  "homepage": "https://github.com/ashleydavis/react-typescript-docker-template#readme",
+  "devDependencies": {
+    "@types/express": "^4.16.0",
+    "@types/yargs": "^11.1.2",
+    "typescript": "^3.1.3",
+    "nodemon": "^1.18.5",
+    "ts-node": "^7.0.1",
+    "dotenv": "^6.1.0"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "moment": "^2.22.2",
+    "yargs": "^12.0.2"
+  }
+}

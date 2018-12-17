@@ -1,0 +1,34 @@
+version: '3'
+services:
+
+  client:
+    image: client
+    build: 
+      context: ./web/client
+      dockerfile: Dockerfile-dev
+    container_name: client
+    volumes:
+     - ./tmp/npm:/root/.npm:z
+     - ./web/client/src:/usr/src/app/src:z
+    ports:
+     - "8080:8080"
+    restart: always
+
+  web:
+    image: web
+    build: 
+      context: ./web
+      dockerfile: Dockerfile-dev
+    container_name: web
+    volumes:
+     - ./tmp/npm:/root/.npm:z
+     - ./web/src:/usr/src/app/src:z
+    ports:
+     - "80:80"
+    environment:
+     - PORT=80
+     - NODE_ENV=development
+    depends_on:
+     - client
+    restart: always
+
