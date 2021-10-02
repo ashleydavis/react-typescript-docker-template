@@ -6,6 +6,8 @@ An example of using React with TypeScript, bundled using Docker / Docker-Compose
 
 [With some input from my Node.js microservices example](https://github.com/ashleydavis/nodejs-microservices-example).
 
+[Click here to support my work](https://www.codecapers.com.au/about#support-my-work)
+
 ## Running with Docker-Compose in the Vagrant dev VM
 
 Ensure you have VirtualBox and Vagrant installed.
