@@ -1,6 +1,6 @@
 # react-typescript-docker-template
 
-An example of using React with TypeScript, bundled using Docker / Docker-Compose.
+An example of using TypeScript Node.js appliction running under Docker that serves React-based frontend.
 
 [Based on my previous example](https://github.com/ashleydavis/react-typescript-template).
 
@@ -8,39 +8,17 @@ An example of using React with TypeScript, bundled using Docker / Docker-Compose
 
 [Click here to support my work](https://www.codecapers.com.au/about#support-my-work)
 
-## Running with Docker-Compose in the Vagrant dev VM
+## Running the applicaiton
 
-Ensure you have VirtualBox and Vagrant installed.
+Ensure you have [Docker Desktop](https://www.docker.com/products/docker-desktop) installed.
 
-Bring the VM up:
+Run Docker Compose to bring up the application in development mode:
 
-    vagrant up
+```bash
+docker compose up --build
+```
 
-This starts an Ubuntu development VM, installs Docker and Docker-Compose.
+Connect to the webpack dev server: http://localhost:4001
 
-After the dev VM has started, you can shell in and boot the system using Docker-Compose:
-
-    vagrant ssh
-
-Change to the shared directory:
-
-    cd /vagrant
-
-Run Docker Compose:
-
-    sudo docker-compose up --build
-
-You can also add a -d parameter to start Docker-Compose in dettached mode.
-
-Connect to the webpack dev server: http://localhost:4010
-
-Connect to the prod web server and API: http://localhost:4000
-
-To list running containers:
-
-    sudo docker-compose ps
-
-To kill the containers:
-
-    sudo docker-compose kill
+Connect to the REST API: http://localhost:4000
 

@@ -11,7 +11,7 @@ services:
      - ./tmp/npm:/root/.npm:z
      - ./web/client/src:/usr/src/app/src:z
     ports:
-     - "8080:8080"
+     - "4001:8080"
     restart: always
 
   web:
@@ -24,7 +24,7 @@ services:
      - ./tmp/npm:/root/.npm:z
      - ./web/src:/usr/src/app/src:z
     ports:
-     - "80:80"
+     - "4000:80"
     environment:
      - PORT=80
      - NODE_ENV=development
